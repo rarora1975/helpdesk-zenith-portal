@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -6,11 +5,21 @@ import {
   LayoutDashboard, 
   Ticket, 
   BookOpenText, 
-  Users, 
+  Users,
   Settings,
   ChevronLeft, 
   ChevronRight,
-  ClipboardCheck
+  ClipboardCheck,
+  Package,
+  RadioTower,
+  Trash2,
+  ArrowLeftRight,
+  Recycle,
+  ShoppingCart,
+  Wrench,
+  LineChart,
+  RefreshCw,
+  Clock
 } from 'lucide-react';
 
 type NavItem = {
@@ -46,7 +55,7 @@ const navSections: NavSection[] = [
     ]
   },
   {
-    title: 'ITAM',
+    title: 'User Management',
     items: [
       {
         title: 'Users',
@@ -54,14 +63,69 @@ const navSections: NavSection[] = [
         icon: Users,
       },
       {
+        title: 'Settings',
+        href: '/settings',
+        icon: Settings,
+      },
+      {
         title: 'Audit',
         href: '/audit',
         icon: ClipboardCheck,
       },
+    ]
+  },
+  {
+    title: 'Asset Management',
+    items: [
       {
-        title: 'Settings',
-        href: '/settings',
-        icon: Settings,
+        title: 'Inventory',
+        href: '/inventory',
+        icon: Package,
+      },
+      {
+        title: 'Asset Tracking',
+        href: '/tracking',
+        icon: RadioTower,
+      },
+      {
+        title: 'Device Wipe',
+        href: '/wipe',
+        icon: Trash2,
+      },
+      {
+        title: 'Lease Return',
+        href: '/lease-return',
+        icon: ArrowLeftRight,
+      },
+      {
+        title: 'Disposal',
+        href: '/disposal',
+        icon: Recycle,
+      },
+      {
+        title: 'Procurement',
+        href: '/procurement',
+        icon: ShoppingCart,
+      },
+      {
+        title: 'Asset Repair',
+        href: '/repair',
+        icon: Wrench,
+      },
+      {
+        title: 'Future Forecast',
+        href: '/forecast',
+        icon: LineChart,
+      },
+      {
+        title: 'Asset Refresh',
+        href: '/refresh',
+        icon: RefreshCw,
+      },
+      {
+        title: 'Device Lifecycle',
+        href: '/lifecycle',
+        icon: Clock,
       },
     ]
   }

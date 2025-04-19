@@ -26,8 +26,18 @@ const App = () => (
           <Route path="/tickets" element={<MainLayout><Tickets /></MainLayout>} />
           <Route path="/knowledge" element={<MainLayout><KnowledgeBase /></MainLayout>} />
           <Route path="/users" element={<MainLayout><Users /></MainLayout>} />
-          <Route path="/audit" element={<MainLayout><Audit /></MainLayout>} />
           <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
+          <Route path="/audit" element={<MainLayout><Audit /></MainLayout>} />
+          <Route path="/inventory" element={<MainLayout><div className="text-xl">Inventory Page</div></MainLayout>} />
+          <Route path="/tracking" element={<MainLayout><div className="text-xl">Asset Tracking Page</div></MainLayout>} />
+          <Route path="/wipe" element={<MainLayout><div className="text-xl">Device Wipe Page</div></MainLayout>} />
+          <Route path="/lease-return" element={<MainLayout><div className="text-xl">Lease Return Page</div></MainLayout>} />
+          <Route path="/disposal" element={<MainLayout><div className="text-xl">Disposal Page</div></MainLayout>} />
+          <Route path="/procurement" element={<MainLayout><div className="text-xl">Procurement Page</div></MainLayout>} />
+          <Route path="/repair" element={<MainLayout><div className="text-xl">Asset Repair Page</div></MainLayout>} />
+          <Route path="/forecast" element={<MainLayout><div className="text-xl">Future Forecast Page</div></MainLayout>} />
+          <Route path="/refresh" element={<MainLayout><div className="text-xl">Asset Refresh Page</div></MainLayout>} />
+          <Route path="/lifecycle" element={<MainLayout><div className="text-xl">Device Lifecycle Page</div></MainLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -36,3 +46,4 @@ const App = () => (
 );
 
 export default App;
+
