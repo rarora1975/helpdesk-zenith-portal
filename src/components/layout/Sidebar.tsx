@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -18,37 +19,52 @@ type NavItem = {
   icon: React.ElementType;
 };
 
-const navItems: NavItem[] = [
+type NavSection = {
+  title: string;
+  items: NavItem[];
+};
+
+const navSections: NavSection[] = [
   {
-    title: 'Dashboard',
-    href: '/',
-    icon: LayoutDashboard,
+    title: 'ITSM',
+    items: [
+      {
+        title: 'Dashboard',
+        href: '/',
+        icon: LayoutDashboard,
+      },
+      {
+        title: 'Tickets',
+        href: '/tickets',
+        icon: Ticket,
+      },
+      {
+        title: 'Knowledge Base',
+        href: '/knowledge',
+        icon: BookOpenText,
+      },
+    ]
   },
   {
-    title: 'Tickets',
-    href: '/tickets',
-    icon: Ticket,
-  },
-  {
-    title: 'Knowledge Base',
-    href: '/knowledge',
-    icon: BookOpenText,
-  },
-  {
-    title: 'Users',
-    href: '/users',
-    icon: Users,
-  },
-  {
-    title: 'Audit',
-    href: '/audit',
-    icon: ClipboardCheck,
-  },
-  {
-    title: 'Settings',
-    href: '/settings',
-    icon: Settings,
-  },
+    title: 'ITAM',
+    items: [
+      {
+        title: 'Users',
+        href: '/users',
+        icon: Users,
+      },
+      {
+        title: 'Audit',
+        href: '/audit',
+        icon: ClipboardCheck,
+      },
+      {
+        title: 'Settings',
+        href: '/settings',
+        icon: Settings,
+      },
+    ]
+  }
 ];
 
 const Sidebar = () => {
@@ -86,22 +102,33 @@ const Sidebar = () => {
       </div>
       
       <nav className="flex-1 py-4">
-        <ul className="space-y-1 px-2">
-          {navItems.map((item) => (
-            <li key={item.title}>
-              <Link
-                to={item.href}
-                className={cn(
-                  "flex items-center py-3 px-3 rounded-md text-sidebar-foreground hover:bg-sidebar-accent group transition-colors",
-                  window.location.pathname === item.href && "bg-sidebar-accent text-white"
-                )}
-              >
-                <item.icon className="h-5 w-5 mr-2 text-sidebar-foreground" />
-                {!collapsed && <span>{item.title}</span>}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {navSections.map((section) => (
+          <div key={section.title} className="mb-6">
+            {!collapsed && (
+              <div className="px-4 mb-2">
+                <span className="text-xs font-semibold text-sidebar-foreground/70">
+                  {section.title}
+                </span>
+              </div>
+            )}
+            <ul className="space-y-1 px-2">
+              {section.items.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "flex items-center py-3 px-3 rounded-md text-sidebar-foreground hover:bg-sidebar-accent group transition-colors",
+                      window.location.pathname === item.href && "bg-sidebar-accent text-white"
+                    )}
+                  >
+                    <item.icon className="h-5 w-5 mr-2 text-sidebar-foreground" />
+                    {!collapsed && <span>{item.title}</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </nav>
       
       <div className="p-4">
