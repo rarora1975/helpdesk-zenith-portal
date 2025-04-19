@@ -59,13 +59,13 @@ const Sidebar = () => {
       <div className="p-4 flex items-center justify-between h-16">
         {!collapsed && (
           <Link to="/" className="flex items-center">
-            <span className="font-bold text-xl text-white">Zenith</span>
+            <span className="font-bold text-xl text-white">Myproject</span>
             <span className="text-zenith-400 ml-1">ITSM</span>
           </Link>
         )}
         {collapsed && (
           <Link to="/" className="w-full flex justify-center">
-            <span className="font-bold text-xl text-white">Z</span>
+            <span className="font-bold text-xl text-white">M</span>
           </Link>
         )}
         <button
@@ -102,7 +102,7 @@ const Sidebar = () => {
       <div className="p-4">
         {!collapsed && (
           <div className="p-3 bg-sidebar-accent rounded-md">
-            <div className="text-xs text-zenith-300">Zenith ITSM v1.0</div>
+            <div className="text-xs text-zenith-300">Myproject ITSM v1.0</div>
           </div>
         )}
       </div>
