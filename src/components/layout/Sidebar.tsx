@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -7,9 +6,10 @@ import {
   Ticket, 
   BookOpenText, 
   Users, 
-  Settings, 
+  Settings,
   ChevronLeft, 
-  ChevronRight
+  ChevronRight,
+  ClipboardCheck
 } from 'lucide-react';
 
 type NavItem = {
@@ -38,6 +38,11 @@ const navItems: NavItem[] = [
     title: 'Users',
     href: '/users',
     icon: Users,
+  },
+  {
+    title: 'Audit',
+    href: '/audit',
+    icon: ClipboardCheck,
   },
   {
     title: 'Settings',

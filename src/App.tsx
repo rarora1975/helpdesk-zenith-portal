@@ -10,6 +10,7 @@ import Tickets from "./pages/Tickets";
 import KnowledgeBase from "./pages/KnowledgeBase";
 import Users from "./pages/Users";
 import Settings from "./pages/Settings";
+import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/tickets" element={<MainLayout><Tickets /></MainLayout>} />
           <Route path="/knowledge" element={<MainLayout><KnowledgeBase /></MainLayout>} />
           <Route path="/users" element={<MainLayout><Users /></MainLayout>} />
+          <Route path="/audit" element={<MainLayout><Audit /></MainLayout>} />
           <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
