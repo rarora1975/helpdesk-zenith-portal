@@ -66,12 +66,7 @@ const navSections: NavSection[] = [
         title: 'Settings',
         href: '/settings',
         icon: Settings,
-      },
-      {
-        title: 'Audit',
-        href: '/audit',
-        icon: ClipboardCheck,
-      },
+      }
     ]
   },
   {

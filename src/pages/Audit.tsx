@@ -1,25 +1,48 @@
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Audit = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold tracking-tight">Audit Log</h2>
+        <h2 className="text-3xl font-bold tracking-tight">Asset Audit</h2>
         <p className="text-muted-foreground">
-          Track and monitor system activities and changes
+          Schedule, track, and review asset audits
         </p>
       </div>
       
       <Card>
         <CardHeader>
-          <CardTitle>System Activity</CardTitle>
-          <CardDescription>Recent actions and changes in the system</CardDescription>
+          <CardTitle>Asset Audit Management</CardTitle>
+          <CardDescription>Manage and track your asset audits</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="text-muted-foreground">
-            Audit functionality will be implemented here
-          </div>
+          <Tabs defaultValue="schedule" className="space-y-4">
+            <TabsList>
+              <TabsTrigger value="schedule">Schedule</TabsTrigger>
+              <TabsTrigger value="track">Track</TabsTrigger>
+              <TabsTrigger value="review">Review</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="schedule" className="space-y-4">
+              <div className="text-muted-foreground">
+                Schedule new asset audits and manage upcoming audit schedules
+              </div>
+            </TabsContent>
+
+            <TabsContent value="track" className="space-y-4">
+              <div className="text-muted-foreground">
+                Track ongoing asset audits and their progress
+              </div>
+            </TabsContent>
+
+            <TabsContent value="review" className="space-y-4">
+              <div className="text-muted-foreground">
+                Review completed asset audits and their findings
+              </div>
+            </TabsContent>
+          </Tabs>
         </CardContent>
       </Card>
     </div>
