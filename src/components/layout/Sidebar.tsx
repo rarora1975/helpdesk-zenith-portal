@@ -83,6 +83,11 @@ const navSections: NavSection[] = [
         icon: RadioTower,
       },
       {
+        title: 'Asset Audit',
+        href: '/audit',
+        icon: ClipboardCheck,
+      },
+      {
         title: 'Device Wipe',
         href: '/wipe',
         icon: Trash2,
