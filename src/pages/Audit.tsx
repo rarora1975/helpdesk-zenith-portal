@@ -1,6 +1,9 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Schedule from "@/components/audit/Schedule";
+import Track from "@/components/audit/Track";
+import Review from "@/components/audit/Review";
 
 const Audit = () => {
   return (
@@ -26,21 +29,15 @@ const Audit = () => {
             </TabsList>
 
             <TabsContent value="schedule" className="space-y-4">
-              <div className="text-muted-foreground">
-                Schedule new asset audits and manage upcoming audit schedules
-              </div>
+              <Schedule />
             </TabsContent>
 
             <TabsContent value="track" className="space-y-4">
-              <div className="text-muted-foreground">
-                Track ongoing asset audits and their progress
-              </div>
+              <Track />
             </TabsContent>
 
             <TabsContent value="review" className="space-y-4">
-              <div className="text-muted-foreground">
-                Review completed asset audits and their findings
-              </div>
+              <Review />
             </TabsContent>
           </Tabs>
         </CardContent>
