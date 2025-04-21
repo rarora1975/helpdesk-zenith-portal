@@ -12,6 +12,7 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
+import Inventory from "./pages/Inventory";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +29,7 @@ const App = () => (
           <Route path="/users" element={<MainLayout><Users /></MainLayout>} />
           <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
           <Route path="/audit" element={<MainLayout><Audit /></MainLayout>} />
-          <Route path="/inventory" element={<MainLayout><div className="text-xl">Inventory Page</div></MainLayout>} />
+          <Route path="/inventory" element={<MainLayout><Inventory /></MainLayout>} />
           <Route path="/tracking" element={<MainLayout><div className="text-xl">Asset Tracking Page</div></MainLayout>} />
           <Route path="/wipe" element={<MainLayout><div className="text-xl">Device Wipe Page</div></MainLayout>} />
           <Route path="/lease-return" element={<MainLayout><div className="text-xl">Lease Return Page</div></MainLayout>} />
@@ -46,4 +47,3 @@ const App = () => (
 );
 
 export default App;
-
