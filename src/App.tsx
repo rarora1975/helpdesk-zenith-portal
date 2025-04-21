@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,6 +12,8 @@ import Settings from "./pages/Settings";
 import Audit from "./pages/Audit";
 import NotFound from "./pages/NotFound";
 import Inventory from "./pages/Inventory";
+import AssetRepairList from "@/components/inventory/AssetRepairList";
+import DisposalList from "@/components/inventory/DisposalList";
 
 const queryClient = new QueryClient();
 
@@ -33,9 +34,9 @@ const App = () => (
           <Route path="/tracking" element={<MainLayout><div className="text-xl">Asset Tracking Page</div></MainLayout>} />
           <Route path="/wipe" element={<MainLayout><div className="text-xl">Device Wipe Page</div></MainLayout>} />
           <Route path="/lease-return" element={<MainLayout><div className="text-xl">Lease Return Page</div></MainLayout>} />
-          <Route path="/disposal" element={<MainLayout><div className="text-xl">Disposal Page</div></MainLayout>} />
+          <Route path="/disposal" element={<MainLayout><DisposalList /></MainLayout>} />
           <Route path="/procurement" element={<MainLayout><div className="text-xl">Procurement Page</div></MainLayout>} />
-          <Route path="/repair" element={<MainLayout><div className="text-xl">Asset Repair Page</div></MainLayout>} />
+          <Route path="/repair" element={<MainLayout><AssetRepairList /></MainLayout>} />
           <Route path="/forecast" element={<MainLayout><div className="text-xl">Future Forecast Page</div></MainLayout>} />
           <Route path="/refresh" element={<MainLayout><div className="text-xl">Asset Refresh Page</div></MainLayout>} />
           <Route path="/lifecycle" element={<MainLayout><div className="text-xl">Device Lifecycle Page</div></MainLayout>} />
