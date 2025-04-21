@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -10,6 +9,7 @@ import {
 } from "@/components/ui/table";
 import { mockInventoryData } from "@/data/mockInventory";
 import { Badge } from "@/components/ui/badge";
+import InventoryStatusTiles from "@/components/inventory/InventoryStatusTiles";
 
 const getStatusColor = (status: string) => {
   switch (status) {
@@ -29,6 +29,7 @@ const getStatusColor = (status: string) => {
 const Inventory = () => {
   return (
     <div className="p-6">
+      <InventoryStatusTiles />
       <Card>
         <CardHeader>
           <CardTitle>Laptop Inventory (CMDB)</CardTitle>
