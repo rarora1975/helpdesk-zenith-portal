@@ -1,25 +1,25 @@
 
 import { Link } from "react-router-dom";
-import { Plug } from "lucide-react";
+import { database, cloud, upload } from "lucide-react";
 
 const connectors = [
   {
-    name: "Zapier Integration",
-    description: "Automate workflows by connecting your ITSM to Zapier.",
-    href: "#",
-    active: false,
+    name: "ServiceNow API Connection",
+    description: "Connect your ITSM to ServiceNow using API integration.",
+    icon: database,
+    href: "/connector/servicenow",
   },
   {
-    name: "SSO / Identity Provider",
-    description: "Manage authentication via SSO (coming soon).",
-    href: "#",
-    active: false,
+    name: "Intune API Connection",
+    description: "Connect to Microsoft Intune for device management.",
+    icon: cloud,
+    href: "/connector/intune",
   },
   {
-    name: "Webhooks",
-    description: "Send and receive webhooks to automate events.",
-    href: "#",
-    active: false,
+    name: "Manual Data Upload",
+    description: "Upload ITSM data manually via file upload.",
+    icon: upload,
+    href: "/connector/manual-upload",
   },
 ];
 
@@ -27,36 +27,30 @@ const Connector = () => {
   return (
     <div className="max-w-2xl mx-auto py-8">
       <div className="flex items-center gap-3 mb-8">
-        <Plug className="h-7 w-7 text-primary" />
+        <database className="h-7 w-7 text-primary" />
         <h1 className="text-3xl font-bold tracking-tight">Connectors</h1>
       </div>
       <p className="text-muted-foreground mb-10">
-        Integrate with third-party tools and automate your ITSM workflows. More coming soon.
+        Integrate with third-party tools and automate your ITSM workflows.
       </p>
       <div className="grid gap-6">
         {connectors.map((conn) => (
-          <div
+          <Link
             key={conn.name}
-            className="p-5 rounded-xl border bg-white flex flex-col md:flex-row md:items-center justify-between gap-3"
+            to={conn.href}
+            className="group p-5 rounded-xl border bg-white flex flex-col md:flex-row md:items-center justify-between gap-3 hover:shadow-lg transition"
           >
-            <div>
-              <div className="font-semibold text-xl">{conn.name}</div>
-              <div className="text-sm text-muted-foreground">{conn.description}</div>
+            <div className="flex items-center gap-3">
+              <conn.icon className="h-8 w-8 text-primary" />
+              <div>
+                <div className="font-semibold text-xl group-hover:text-primary">{conn.name}</div>
+                <div className="text-sm text-muted-foreground">{conn.description}</div>
+              </div>
             </div>
-            {conn.active ? (
-              <button className="bg-green-100 text-green-700 px-4 py-2 rounded font-medium cursor-default" disabled>
-                Connected
-              </button>
-            ) : (
-              <button
-                className="bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded font-medium"
-                disabled
-                tabIndex={-1}
-              >
-                Coming Soon
-              </button>
-            )}
-          </div>
+            <span className="ml-auto text-primary text-sm font-medium flex items-center gap-1 group-hover:underline">
+              Open &rarr;
+            </span>
+          </Link>
         ))}
       </div>
     </div>

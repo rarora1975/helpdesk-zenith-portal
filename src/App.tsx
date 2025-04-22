@@ -15,6 +15,9 @@ import Inventory from "./pages/Inventory";
 import AssetRepairList from "@/components/inventory/AssetRepairList";
 import DisposalList from "@/components/inventory/DisposalList";
 import Connector from "./pages/Connector";
+import ServiceNowConnector from "./pages/ServiceNowConnector";
+import IntuneConnector from "./pages/IntuneConnector";
+import ManualUpload from "./pages/ManualUpload";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/knowledge" element={<MainLayout><KnowledgeBase /></MainLayout>} />
           <Route path="/users" element={<MainLayout><Users /></MainLayout>} />
           <Route path="/connector" element={<MainLayout><Connector /></MainLayout>} />
+          <Route path="/connector/servicenow" element={<MainLayout><ServiceNowConnector /></MainLayout>} />
+          <Route path="/connector/intune" element={<MainLayout><IntuneConnector /></MainLayout>} />
+          <Route path="/connector/manual-upload" element={<MainLayout><ManualUpload /></MainLayout>} />
           <Route path="/settings" element={<MainLayout><Settings /></MainLayout>} />
           <Route path="/audit" element={<MainLayout><Audit /></MainLayout>} />
           <Route path="/inventory" element={<MainLayout><Inventory /></MainLayout>} />
