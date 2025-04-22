@@ -19,6 +19,7 @@ import {
   SelectItem,
   SelectValue,
 } from "@/components/ui/select";
+import { InventoryItem } from "@/types/inventory";
 
 const getStatusColor = (status: string) => {
   switch (status) {
@@ -45,7 +46,7 @@ const statusOptions = [
 const Inventory = () => {
   const [assets, setAssets] = useState(mockInventoryData);
 
-  const handleStatusChange = (id: string, newStatus: string) => {
+  const handleStatusChange = (id: string, newStatus: "In Use" | "Available" | "In Repair" | "Retired") => {
     setAssets((current) =>
       current.map((asset) =>
         asset.id === id ? { ...asset, status: newStatus } : asset
@@ -89,7 +90,9 @@ const Inventory = () => {
                       </Badge>
                       <Select
                         value={item.status}
-                        onValueChange={(value) => handleStatusChange(item.id, value)}
+                        onValueChange={(value: "In Use" | "Available" | "In Repair" | "Retired") => 
+                          handleStatusChange(item.id, value)
+                        }
                       >
                         <SelectTrigger className="w-28 h-8 ml-2 text-xs" aria-label="Change status">
                           <SelectValue />
@@ -119,4 +122,3 @@ const Inventory = () => {
 };
 
 export default Inventory;
-
