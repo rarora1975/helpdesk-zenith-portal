@@ -19,7 +19,8 @@ import {
   Wrench,
   LineChart,
   RefreshCw,
-  Clock
+  Clock,
+  Plug
 } from 'lucide-react';
 
 type NavItem = {
@@ -61,6 +62,11 @@ const navSections: NavSection[] = [
         title: 'Users',
         href: '/users',
         icon: Users,
+      },
+      {
+        title: 'Connector',
+        href: '/connector',
+        icon: Plug,
       },
       {
         title: 'Settings',
