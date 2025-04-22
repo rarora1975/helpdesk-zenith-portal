@@ -1,24 +1,24 @@
 
 import { Link } from "react-router-dom";
-import { database, cloud, upload } from "lucide-react";
+import { Database, Cloud, Upload } from "lucide-react";
 
 const connectors = [
   {
     name: "ServiceNow API Connection",
     description: "Connect your ITSM to ServiceNow using API integration.",
-    icon: database,
+    icon: Database,
     href: "/connector/servicenow",
   },
   {
     name: "Intune API Connection",
     description: "Connect to Microsoft Intune for device management.",
-    icon: cloud,
+    icon: Cloud,
     href: "/connector/intune",
   },
   {
     name: "Manual Data Upload",
     description: "Upload ITSM data manually via file upload.",
-    icon: upload,
+    icon: Upload,
     href: "/connector/manual-upload",
   },
 ];
@@ -27,7 +27,7 @@ const Connector = () => {
   return (
     <div className="max-w-2xl mx-auto py-8">
       <div className="flex items-center gap-3 mb-8">
-        <database className="h-7 w-7 text-primary" />
+        <Database className="h-7 w-7 text-primary" />
         <h1 className="text-3xl font-bold tracking-tight">Connectors</h1>
       </div>
       <p className="text-muted-foreground mb-10">

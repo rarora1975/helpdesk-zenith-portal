@@ -1,10 +1,10 @@
 
-import { upload } from "lucide-react";
+import { Upload } from "lucide-react";
 
 const ManualUpload = () => (
   <div className="max-w-xl mx-auto py-10">
     <div className="flex gap-3 items-center mb-6">
-      <upload className="h-7 w-7 text-primary" />
+      <Upload className="h-7 w-7 text-primary" />
       <h2 className="text-2xl font-bold">Manual Data Upload</h2>
     </div>
     <p className="text-muted-foreground mb-6">

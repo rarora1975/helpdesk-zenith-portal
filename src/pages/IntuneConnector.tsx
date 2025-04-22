@@ -1,10 +1,10 @@
 
-import { cloud } from "lucide-react";
+import { Cloud } from "lucide-react";
 
 const IntuneConnector = () => (
   <div className="max-w-xl mx-auto py-10">
     <div className="flex gap-3 items-center mb-6">
-      <cloud className="h-7 w-7 text-primary" />
+      <Cloud className="h-7 w-7 text-primary" />
       <h2 className="text-2xl font-bold">Intune API Connection</h2>
     </div>
     <p className="text-muted-foreground mb-6">

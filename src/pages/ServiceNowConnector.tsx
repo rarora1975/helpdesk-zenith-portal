@@ -1,10 +1,10 @@
 
-import { database } from "lucide-react";
+import { Database } from "lucide-react";
 
 const ServiceNowConnector = () => (
   <div className="max-w-xl mx-auto py-10">
     <div className="flex gap-3 items-center mb-6">
-      <database className="h-7 w-7 text-primary" />
+      <Database className="h-7 w-7 text-primary" />
       <h2 className="text-2xl font-bold">ServiceNow API Connection</h2>
     </div>
     <p className="text-muted-foreground mb-6">
